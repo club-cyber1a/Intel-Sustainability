@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Intel: Sustainability Through the Ages</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Strichpunkt+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header / Hero Section -->
+  <header>
+    <div>
+      <img src="img/intel-header-logo.svg" alt="Intel Logo" />
+      <!-- Main Heading -->
+      <h1>
+        Sustainability Through the Ages
+      </h1>
+
+      <!-- Subheading / Description -->
+      <p>
+        Explore Intel's journey through time, discovering how our commitment
+        to innovation has shaped a more sustainable future for technology 
+        and our planet.
+      </p>
+    </div>
+  </header>
+
+  <!-- Timeline Cards Section -->
+  <div class="timeline-text">
+    <h3>Scroll through the timeline | Hover over cards to learn more!</h3>
+    <h4>Use could also use TAB to navigate through the cards and ENTER to toggle descriptions!</h4>
+    <section>
+
+    <!-- Card 1: 1968 -->
+    <div tabindex="0">
+      <h2>1968</h2>
+      <h3>Intel Founded</h3>
+      <img src="img/1968.png" alt="Intel Founded in 1968" />
+      <p>
+        Robert Noyce and Gordon Moore rename the newly formed company 
+        NM Electronics to Intel Corporation, laying the foundation for 
+        decades of technological innovation.
+      </p>
+    </div>
+
+    <!-- Card 2: 1971 -->
+    <div tabindex="0">
+      <h2>1971</h2>
+      <h3>First Microprocessor</h3>
+      <img src="img/1971.jpg" alt="First Microprocessor in 1971" />
+      <p>
+        Intel debuts the 4004, the world's first commercial microprocessor, 
+        igniting the microprocessor revolution and propelling the future 
+        of computing devices.
+      </p>
+    </div>
+
+    <!-- Card 3: 1978 -->
+    <div tabindex="0">
+      <h2>1978</h2>
+      <h3>8086 Processor</h3>
+      <img src="img/1978.jpg" alt="8086 Processor in 1978" />
+      <p>
+        Launch of the 8086 processor, establishing the x86 architecture 
+        that drives countless PCs and servers in the modern era.
+      </p>
+    </div>
+
+    <!-- Card 4: 1985 -->
+    <div tabindex="0">
+      <h2>1985</h2>
+      <h3>386 Processor</h3>
+      <img src="img/1985.jpg" alt="386 Processor in 1985" />
+      <p>
+        Intel introduces the 386 processor with 32-bit architecture, 
+        ushering in a new era of performance and multitasking for 
+        personal computers.
+      </p>
+    </div>
+
+    <!-- Card 5: 2006 -->
+    <div tabindex="0">
+      <h2>2006</h2>
+      <h3>Peak GHG Emissions</h3>
+      <img src="img/2006.jpg" alt="Peak GHG Emissions in 2006" />
+      <p>
+        This year marks Intel's highest annual greenhouse gas emissions 
+        for operations. Over subsequent years, Intel invests heavily in 
+        chemical abatement, renewable energy, and energy-efficient 
+        manufacturing to reverse this trend.
+      </p>
+    </div>
+
+    <!-- Card 6: 2020 -->
+    <div tabindex="0">
+      <h2>2020</h2>
+      <h3>RISE Strategy</h3>
+      <img src="img/2020.png" alt="RISE Strategy in 2020" />
+      <p>
+        Intel launches its RISE (Responsible, Inclusive, Sustainable, 
+        Enabling) strategy and 2030 goals, aiming to drive industry-wide 
+        progress on climate action, water stewardship, and waste reduction.
+      </p>
+    </div>
+
+    <!-- Card 7: 2022 -->
+    <div tabindex="0">
+      <h2>2022</h2>
+      <h3>Net-Zero By 2040</h3>
+      <img src="img/2022.jpg" alt="Net-Zero By 2040 in 2022" />
+      <p>
+        Intel announces its commitment to achieve net-zero greenhouse 
+        gas emissions (Scope 1 and 2) across its global operations 
+        by 2040, building on years of environmental initiatives.
+      </p>
+    </div>
+
+    <!-- Card 8: 2023 -->
+    <div tabindex="0">
+      <h2>2023</h2>
+      <h3>Renewable Electricity</h3>
+      <img src="img/2023.png" alt="Renewable Electricity in 2023" />
+      <p>
+        The company achieves 99% renewable electricity usage worldwide, 
+        helping to drastically lower carbon emissions and driving progress 
+        toward Intel's long-term sustainability goals.
+      </p>
+    </div>
+
+    <!-- Card 9: 2024 -->
+    <div tabindex="0">
+      <h2>2024</h2>
+      <h3>Sustainability Summit</h3>
+      <img src="img/2024.png" alt="Sustainability Summit in 2024" />
+      <p>
+        Intel hosts its first Sustainability Summit, uniting suppliers, 
+        government officials, and industry leaders to collaborate on 
+        next-generation sustainable semiconductor manufacturing.
+      </p>
+    </div>
+  </section>
+  </div>
+  
+  <script>
+    // scroll wheel functionality for horizontal scrolling
+    const section = document.querySelector('section');
+    const cards = document.querySelectorAll('section > div');
+    let isDesktop = window.innerWidth > 768;
+    let isSetup = false;
+    
+    function showDescription(card) {
+      const description = card.querySelector('p');
+      if (description) {
+        description.style.maxHeight = '160px';
+        description.style.opacity = '1';
+      }
+    }
+    
+    function hideDescription(card) {
+      const description = card.querySelector('p');
+      if (description) {
+        description.style.maxHeight = '0';
+        description.style.opacity = '0';
+      }
+    }
+    
+    function toggleDescription(card) {
+      const description = card.querySelector('p');
+      if (description) {
+        const isVisible = description.style.opacity === '1';
+        if (isVisible) {
+          hideDescription(card);
+        } else {
+          showDescription(card);
+        }
+      }
+    }
+    
+    function setupDesktopMode() {
+      // remove mobile click handlers
+      cards.forEach(card => {
+        card.removeEventListener('click', handleMobileClick);
+      });
+      
+      // desktop event listeners
+      cards.forEach(card => {
+        card.addEventListener('focus', handleFocus);
+        card.addEventListener('keydown', handleKeydown);
+        card.addEventListener('blur', handleBlur);
+      });
+      
+      // scroll wheel
+      section.addEventListener('wheel', handleWheel, { passive: false });
+      isSetup = true;
+    }
+    
+    function setupMobileMode() {
+      // remove desktop event listeners
+      cards.forEach(card => {
+        card.removeEventListener('focus', handleFocus);
+        card.removeEventListener('keydown', handleKeydown);
+        card.removeEventListener('blur', handleBlur);
+      });
+      
+      // remove scroll wheel
+      section.removeEventListener('wheel', handleWheel);
+      
+      // setup mobile click handlers
+      cards.forEach(card => {
+        card.addEventListener('click', handleMobileClick);
+      });
+      isSetup = true;
+    }
+    
+    function handleFocus() {
+      showDescription(this);
+      this.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'nearest' });
+    }
+    
+    function handleKeydown(e) {
+      if (e.key === 'Enter') {
+        e.preventDefault();
+        toggleDescription(this);
+      }
+    }
+    
+    function handleBlur() {
+      hideDescription(this);
+    }
+    
+    function handleMobileClick(e) {
+      e.preventDefault();
+      // hide other cards descriptions
+      cards.forEach(otherCard => {
+        if (otherCard !== this) {
+          hideDescription(otherCard);
+        }
+      });
+      // toggle current cards description
+      toggleDescription(this);
+    }
+    
+    function handleWheel(e) {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        section.scrollLeft += e.deltaY;
+      }
+    }
+    
+    // setup
+    if (isDesktop) {
+      setupDesktopMode();
+    } else {
+      setupMobileMode();
+    }
+    
+    // window resize to handle layout switching
+    window.addEventListener('resize', () => {
+      const newIsDesktop = window.innerWidth > 768;
+      if (newIsDesktop !== isDesktop) {
+        isDesktop = newIsDesktop;
+        if (isDesktop) {
+          setupDesktopMode();
+        } else {
+          setupMobileMode();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
